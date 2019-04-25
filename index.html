@@ -11,11 +11,26 @@
     <style>
            body
            {
+               width: 100%;
+               max-width: 480px;
+               min-width: 320px;
+               margin: 35px auto 0 auto;
                font-family: sans-serif;
+               
+               /*
+               background-color: red;
+               */
            }
+           
+           #app
+           {
+               /*
+               background-color: red;
+               */
+           }
+           
            #page_title
            {
-               width: 100%;
                margin: 0;
                border: 2px solid #0c0c0c;
                font-size: 27pt;
@@ -36,25 +51,63 @@
            {
                width: 100%;
                display: table;
-               margin: 0;
-               padding: 10px;
-               border: 2px solid black;
-               background-color: red;
-           }
-           .character_list_item a
-           {
+               margin: 7.75px 0;
                color: black;
+               background-color: rgba(204, 204, 204, 0.2);
+border-radius: 25px;
+overflow: hidden;
+               text-decoration: none;
+               /*
+               float: left;
+               padding: 1.655%;
+               */
+           }
+           
+           
+           
+           .character_list_item:hover
+           {
+               background-color: rgba(204, 204, 204, 0.65);
+            text-decoration: underline;
+           }
+           
+           .flexbox
+           {
+           display: flex;
+           }
+           
+           a .character_list_item
+           {
+               /*
+               background-color: purple;
+               */
            }
            .character_list_item_icon
            {
                width: 85px;
                float: left;
+               /*
+               */
            }
            .character_list_item_info
            {
+               
+               padding-top: 15px;
+               margin-left: 25px;
+               /*
+               
+           position: absolute;
+               top:50%; height:10em; margin-top:-5em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
                margin-left: 12px;
                padding: 15px 0;
                float: left;
+               
+               background-color: blue;
+               
+               */
            }
             .character_list_item_name
             {
@@ -97,18 +150,19 @@
             .character_page_tagline
             {
                 width: 100%;
-                margin: 0 0 15px 0;
+                margin: 0 0 60px 0;
                 text-align: center;
                 font-size: 18pt;
             }
             .section_title
             {
-                margin: 25px 0 0 0;
+                margin: 0 0 10px 0;
             }
             .character_page_stats
             {
                 padding: 12px;
                 border: 2px solid black;
+                float: left;
             }
             .stat_holder
             {
@@ -153,8 +207,10 @@
             }
             .special_move_list
             {
-                padding: 0 12px;
+                padding: 15px 12px;
                 border: 2px solid black;
+                float: right;
+                min-width: 300px;
             }
             .character_page_move_name
             {
