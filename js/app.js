@@ -28,15 +28,15 @@ var CharacterListItemComponent = React.createClass({
         var backgroundcolor = this.props.character.character_list_item_backgroundcolor;
         var style = {backgroundColor: backgroundcolor};
         return (
-            <div className="character_list_item" style={style}>
-                <a href={"#characters/" + this.props.character.id}>
-                   <img className="character_list_item_icon" src={this.props.character.icon} />
-                   <div className="character_list_item_info">
-                     <h3 className="character_list_item_name">{this.props.character.name}</h3>
-                     <p className="character_list_item_country">{this.props.character.country}</p>
-                   </div>
-                 </a>
-            </div>
+            <a href={"#characters/" + this.props.character.id} className="character_list_item">
+                <div className="flexbox">
+                       <img className="character_list_item_icon" src={this.props.character.icon} />
+                       <div className="character_list_item_info">
+                         <h3 className="character_list_item_name">{this.props.character.name}</h3>
+                         <p className="character_list_item_country">{this.props.character.country}</p>
+                       </div>
+                </div>
+            </a>
         );
     }
 });
@@ -47,7 +47,6 @@ var CharacterListComponent = React.createClass({
                 <CharacterListItemComponent key={character.id} character={character} />
             );
         });
-        console.log(items);
         return (
             <div>
                 {my_characters}
@@ -57,16 +56,25 @@ var CharacterListComponent = React.createClass({
 });
 var HomePage = React.createClass({
     getInitialState: function() {
-        return {characters: []}
+        var chars_ = "";
+        this.props.service.findByName("").done(function(result)
+        {
+            chars_ = result;
+        });
+        return {characters: chars_}
     },
-    searchHandler:function(key) {
-        this.props.service.findByName(key).done(function(result) {
+    searchHandler: function(key)
+    {
+        this.props.service.findByName(key).done(function(result)
+        {
+            console.log(key);
+            console.log(result);
             this.setState({searchKey: key, characters: result});
         }.bind(this));
     },
     render: function () {
         return (
-            <div>
+            <div id="app">
                 <HeaderComponent text="Character List"/>
                 <SearchBarComponent searchHandler={this.searchHandler}/>
                 <CharacterListComponent characters={this.state.characters}/>
@@ -98,6 +106,7 @@ var SpecialMoveListComponent = React.createClass({
         });
         return(
             <div className="special_move_list">
+                    <h2 className="section_title">Special Moves</h2>
                    {special_moves}
             </div>
             );
@@ -181,8 +190,8 @@ var CharacterPage = React.createClass({
                         </div>
                     </div>
                     <p className="character_page_tagline"><i>{this.state.character.tagline}</i></p>
-                    <h2 className="section_title">Character Stats</h2>
                     <div className="character_page_stats">
+                    <h2 className="section_title">Character Stats</h2>
                           <div className="character_page_power stat_holder">
                                  <h3 className="stat_title"><i>POWER</i></h3>
                                  <div className="power_star_holder">
@@ -208,7 +217,6 @@ var CharacterPage = React.createClass({
                                  </div>
                           </div>
                     </div>
-                    <h2 className="section_title">Special Moves</h2>
                     {special_move_list_component}
                 </div>
             </div>

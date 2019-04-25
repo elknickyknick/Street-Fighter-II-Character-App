@@ -1,7 +1,6 @@
-var router = (function () {
-
-    "use strict";
-
+"use strict";
+var router = (function ()
+{
     var routes = [];
 
     function addRoute(route, handler)
@@ -16,30 +15,32 @@ var router = (function () {
 
     function start() 
     {
-        var path = window.location.hash.substr(1),
-            parts = path.split('/'),
-            partsLength = parts.length;
+        var path = window.location.hash.substr(1);
+        var parts = path.split('/');
+        var parts_length = parts.length;
 
-        for (var i = 0; i < routes.length; i++)
+        for (var route = 0; route < routes.length; route++)
         {
-            var route = routes[i];
-            if (route.parts.length === partsLength)
+            //console.log(routes);
+            //console.log(routes[route]);
+            if (routes[route].parts.length === parts_length)
             {
                 var params = [];
-                for (var j = 0; j < partsLength; j++)
+                for (var j = 0; j < parts_length; j++)
                 {
-                    if (route.parts[j].substr(0, 1) === ':')
+                    //console.log(routes[route].parts[j]);
+                    if (routes[route].parts[j].substr(0, 1) === ':')
                     {
                         params.push(parts[j]);
                     }
-                    else if (route.parts[j] !== parts[j])
+                    else if (routes[route].parts[j] !== parts[j])
                     {
                         break;
                     }
                 }
-                if (j === partsLength)
+                if (j === parts_length)
                 {
-                    route.handler.apply(undefined, params);
+                    routes[route].handler.apply(undefined, params);
                     return;
                 }
             }
@@ -53,5 +54,4 @@ var router = (function () {
         load: load,
         start: start
     };
-
 }());
