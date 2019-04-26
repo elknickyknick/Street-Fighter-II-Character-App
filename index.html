@@ -14,21 +14,9 @@
                width: 100%;
                max-width: 480px;
                min-width: 320px;
-               margin: 35px auto 0 auto;
+               margin: 10px auto 0 auto;
                font-family: sans-serif;
-               
-               /*
-               background-color: red;
-               */
            }
-           
-           #app
-           {
-               /*
-               background-color: red;
-               */
-           }
-           
            #page_title
            {
                margin: 0;
@@ -52,62 +40,31 @@
                width: 100%;
                display: table;
                margin: 7.75px 0;
-               color: black;
+               border-radius: 25px;
                background-color: rgba(204, 204, 204, 0.2);
-border-radius: 25px;
-overflow: hidden;
+               color: black;
+               overflow: hidden;
                text-decoration: none;
-               /*
-               float: left;
-               padding: 1.655%;
-               */
            }
-           
-           
-           
            .character_list_item:hover
            {
-               background-color: rgba(204, 204, 204, 0.65);
-            text-decoration: underline;
-           }
-           
-           .flexbox
-           {
-           display: flex;
-           }
-           
-           a .character_list_item
-           {
-               /*
-               background-color: purple;
-               */
+               background-color: rgba(204, 204, 204, 0.85);
+               text-decoration: underline;
            }
            .character_list_item_icon
            {
                width: 85px;
                float: left;
-               /*
-               */
            }
            .character_list_item_info
            {
-               
+               display: inline-block;
                padding-top: 15px;
                margin-left: 25px;
-               /*
-               
-           position: absolute;
-               top:50%; height:10em; margin-top:-5em;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-               margin-left: 12px;
-               padding: 15px 0;
-               float: left;
-               
-               background-color: blue;
-               
-               */
+           }
+           .flexbox
+           {
+            display: flex;
            }
             .character_list_item_name
             {
@@ -150,27 +107,35 @@ overflow: hidden;
             .character_page_tagline
             {
                 width: 100%;
-                margin: 0 0 60px 0;
+                margin: 0 0 0 0;
                 text-align: center;
                 font-size: 18pt;
             }
             .section_title
             {
-                margin: 0 0 10px 0;
+                padding-bottom: 4px;
+                border-bottom: solid black;
+                margin: 20px 0 10px 0;
+                font-size: 27px;
+                font-weight: 800;
+                /*
+                background-color: green;
+                */
             }
             .character_page_stats
             {
+                /*
                 padding: 12px;
                 border: 2px solid black;
-                float: left;
+                */
             }
             .stat_holder
             {
-                margin: 17px 0;
+                margin-bottom: 20px;
             }
             .stat_title
             {
-                margin: 0 0 0 10px;
+                margin: 0 0 0 0;
             }
             .empty_star
             {
@@ -178,47 +143,27 @@ overflow: hidden;
             }
             .stat_star
             {
-                width: 45px;
-                margin: 0 12px 0 0;
-            }
-            .power_star_holder
-            {
-               margin: 0;
-               background-color: rgba(255,255,255,1);
-               background: linear-gradient(rgba(255,255,255,1), rgba(255,0,0,0.15));
-            }
-            .speed_star_holder
-            {
-               margin: 0;
-               background-color: rgba(255,255,255,1);
-               background: linear-gradient(rgba(255,255,255,1), rgba(0,0,255,0.15));
-            }
-            .jump_star_holder
-            {
-               margin: 0;
-               background-color: rgba(255,255,255,1);
-               background: linear-gradient(rgba(255,255,255,1), rgba(255,255,0,0.15));
-            }
-            .range_star_holder
-            {
-               margin: 0;
-               background-color: rgba(255,255,255,1);
-               background: linear-gradient(rgba(255,255,255,1), rgba(0,255,0,0.15));
+                width: 10%;
             }
             .special_move_list
             {
+            /*
                 padding: 15px 12px;
                 border: 2px solid black;
-                float: right;
                 min-width: 300px;
+                */
             }
             .character_page_move_name
             {
-                font-size: 15pt;
-                font-weight: 400;
+                margin: 0;
+            }
+            .special_move
+            {
+                margin-bottom: 20px;
             }
             .character_page_move_steps
             {
+                margin: 0;
                 font-size: 14pt;
                 text-align: center;
             }

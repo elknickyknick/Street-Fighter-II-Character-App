@@ -89,7 +89,7 @@ var HomePage = React.createClass({
 var SpecialMoveComponent = React.createClass({
     render: function(){
         return(
-            <div>
+            <div className="special_move">
                    <h3 className="character_page_move_name">{this.props.move.move_name}</h3>
                    <p className="character_page_move_steps"><i>{this.props.move.move_steps}</i></p>
             </div>
@@ -193,25 +193,25 @@ var CharacterPage = React.createClass({
                     <div className="character_page_stats">
                     <h2 className="section_title">Character Stats</h2>
                           <div className="character_page_power stat_holder">
-                                 <h3 className="stat_title"><i>POWER</i></h3>
+                                 <h3 className="stat_title">POWER</h3>
                                  <div className="power_star_holder">
                                          {powerstars}
                                  </div>
                           </div>
                           <div className="character_page_speed stat_holder">
-                                 <h3 className="stat_title"><i>SPEED</i></h3>
+                                 <h3 className="stat_title">SPEED</h3>
                                  <div className="speed_star_holder">
                                          {speedstars}
                                  </div>
                           </div>
                           <div className="character_page_jump stat_holder">
-                                 <h3 className="stat_title"><i>JUMP</i></h3>
+                                 <h3 className="stat_title">JUMP</h3>
                                  <div className="jump_star_holder">
                                          {jumpstars}
                                  </div>
                           </div>
                           <div className="character_page_range stat_holder">
-                                 <h3 className="stat_title"><i>RANGE</i></h3>
+                                 <h3 className="stat_title">RANGE</h3>
                                  <div className="range_star_holder">
                                          {rangestars}
                                  </div>
