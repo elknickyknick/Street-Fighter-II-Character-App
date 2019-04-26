@@ -21,14 +21,11 @@ var router = (function ()
 
         for (var route = 0; route < routes.length; route++)
         {
-            //console.log(routes);
-            //console.log(routes[route]);
             if (routes[route].parts.length === parts_length)
             {
                 var params = [];
                 for (var j = 0; j < parts_length; j++)
                 {
-                    //console.log(routes[route].parts[j]);
                     if (routes[route].parts[j].substr(0, 1) === ':')
                     {
                         params.push(parts[j]);

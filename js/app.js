@@ -67,8 +67,6 @@ var HomePage = React.createClass({
     {
         this.props.service.findByName(key).done(function(result)
         {
-            console.log(key);
-            console.log(result);
             this.setState({searchKey: key, characters: result});
         }.bind(this));
     },
